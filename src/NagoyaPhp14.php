@@ -27,8 +27,6 @@ class NagoyaPhp14
 
     public function isPalindrome($value)
     {
-        $reverse = implode("", array_reverse(str_split($value)));
-
-        return $value === $reverse;
+        return $value === strrev($value);
     }
 }
