@@ -16,17 +16,13 @@ class NagoyaPhp14
 
         $visibleCounter = 0;
         for ($i = $start; $i < $end; $i++) {
-            if ($this->isPalindrome(base_convert($i, 10, $tobase))) {
+            $number = base_convert($i, 10, $tobase);
+            if ($number === strrev($number)) {
+                echo $number . PHP_EOL;
                 $visibleCounter++;
             }
         }
 
-        // implement me
         return $visibleCounter;
-    }
-
-    public function isPalindrome($value)
-    {
-        return $value === strrev($value);
     }
 }
